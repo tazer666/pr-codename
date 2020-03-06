@@ -11,5 +11,7 @@ This action comments a codename to every PR opened
 ## Example usage
 
 uses: actions/pr-codename@v2
+
+
 with:
  token: ${{ secrets.GITHUB_TOKEN }}
