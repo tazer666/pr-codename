@@ -13,7 +13,7 @@ try {
 
     // Get input parameters.
     const codename = moniker.choose();
-    const message = 'From this point forward, this PR shall be referred to by the codename: ' + moniker.choose();
+    const message = 'PR codename: ' + moniker.choose();
     core.debug(`codename generated: ${message}`);
 
     // Create a GitHub client.
