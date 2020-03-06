@@ -1,18 +1,12 @@
 # PR Codename Generator
 
-This action prints "Hello World" or "Hello" + the name of a person to greet to the log.
+This action comments a codename to every PR opened
 
 ## Inputs
-
-### `who-to-greet`
-
-**Required** The name of the person to greet. Default `"World"`.
-
+ None
 ## Outputs
+ None
 
-### `time`
-
-The time we greeted you.
 
 ## Example usage
 
