@@ -10,6 +10,6 @@ This action comments a codename to every PR opened
 
 ## Example usage
 
-uses: actions/hello-world-javascript-action@v1
+uses: actions/pr-codename@v2
 with:
-  who-to-greet: 'Mona the Octocat'
+ token: ${{ secrets.GITHUB_TOKEN }}
