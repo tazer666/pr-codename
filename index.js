@@ -34,13 +34,13 @@ try {
 
     // Create a comment on PR
     // https://octokit.github.io/rest.js/#octokit-routes-issues-create-comment
-    const response = await client.issues.createComment({
+    const response = client.issues.createComment({
       owner,
       repo,
       // eslint-disable-next-line @typescript-eslint/camelcase
       issue_number: pr.number,
       body: message
-    })
+    });
     core.debug(`created comment URL: ${response.data.html_url}`)
 
     core.setOutput('comment-url', response.data.html_url)
