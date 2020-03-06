@@ -6,8 +6,8 @@ inputs:
     required: true
     default: 'World'
 outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  commentUrl: # id of output
+    description: 'url of comment created'
 runs:
   using: 'node12'
   main: 'index.js'

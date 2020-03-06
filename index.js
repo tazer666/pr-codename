@@ -13,7 +13,38 @@ try {
   const payload = JSON.stringify(github.context.payload, undefined, 2)
 
   github.context.payload.pull_request.body += "asdf"
-  console.log(`The event payload: ${payload}`);
+
+    const pr = github.context.payload.pull_request
+    if (!pr) {
+      core.setFailed('github.context.payload.pull_request does not exist')
+      return
+    }
+
+    // Get input parameters.
+    const token = core.getInput('repo-token')
+    const message = moniker.choose();
+    core.debug(`codename generated: ${message}`)
+
+    // Create a GitHub client.
+    const client = new github.GitHub(github.token)
+
+    // Get owner and repo from context
+    const owner = github.context.repo.owner
+    const repo = github.context.repo.repo
+
+    // Create a comment on PR
+    // https://octokit.github.io/rest.js/#octokit-routes-issues-create-comment
+    const response = await client.issues.createComment({
+      owner,
+      repo,
+      // eslint-disable-next-line @typescript-eslint/camelcase
+      issue_number: pr.number,
+      body: message
+    })
+    core.debug(`created comment URL: ${response.data.html_url}`)
+
+    core.setOutput('comment-url', response.data.html_url)
+
 } catch (error) {
   core.setFailed(error.message);
 }
