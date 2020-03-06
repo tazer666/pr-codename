@@ -1,13 +1,12 @@
 on: [pull_request]
 
 jobs:
-  hello_world_job:
+  codename_job:
     runs-on: ubuntu-latest
     name: A job to generate codenames for PRs
     steps:
     - uses: actions/checkout@v1
     - name: codename generating step
-      id: codename
       uses: ./
       with:
         token: ${{ secrets.GITHUB_TOKEN }}

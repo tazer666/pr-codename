@@ -11,10 +11,10 @@ try {
       return;
     }
 
-    // Get input parameters.
+    // Generate codename
     const codename = moniker.choose();
-    const message = 'PR codename: ' + moniker.choose();
-    core.debug(`codename generated: ${message}`);
+    core.debug(`codename generated: ${codename}`);
+    const message = 'PR codename: ' + codename;
 
     // Create a GitHub client.
     const client = new github.GitHub(core.getInput('token'));
