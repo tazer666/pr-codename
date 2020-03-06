@@ -1,7 +1,8 @@
 name: 'Codename PR Generator'
 description: 'Generates a codename for every PR opened.'
-icon: 'book'
-color: 'green'
+branding:
+  icon: 'book'
+  color: 'green'
 runs:
   using: 'node12'
   main: 'index.js'
