@@ -14,4 +14,5 @@ uses: actions/pr-codename@v2
 
 
 with:
+
  token: ${{ secrets.GITHUB_TOKEN }}
