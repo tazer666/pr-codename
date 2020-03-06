@@ -32,7 +32,6 @@ try {
       body: message
     });
     core.debug('codename comment posted');
-    core.setOutput('comment-url', response.data.html_url);
 } catch (error) {
   core.setFailed(error.message);
 }

@@ -1,13 +1,5 @@
 name: 'Codename PR Generator'
 description: 'Generates a codename for every PR opened.'
-inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
-    required: true
-    default: 'World'
-outputs:
-  commentUrl: # id of output
-    description: 'url of comment created'
 runs:
   using: 'node12'
   main: 'index.js'
