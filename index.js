@@ -19,6 +19,7 @@ try {
       core.setFailed('github.context.payload.pull_request does not exist')
       return
     }
+    token = core.getInput('token');
 
     // Get input parameters.
     const token = core.getInput('repo-token')
@@ -26,11 +27,12 @@ try {
     core.debug(`codename generated: ${message}`)
 
     // Create a GitHub client.
-    const client = new github.GitHub(github.token)
+    const client = new github.GitHub(token)
 
     // Get owner and repo from context
     const owner = github.context.repo.owner
     const repo = github.context.repo.repo
+
 
     // Create a comment on PR
     // https://octokit.github.io/rest.js/#octokit-routes-issues-create-comment
